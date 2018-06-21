@@ -1,11 +1,12 @@
 {
   "name": "ethereum-abi-to-graphql-schema",
   "version": "0.0.0",
-  "description": "Tool for converting smart contract ABIs into GraphQL schemas.",
+  "description": "Converts smart contract ABIs into GraphQL schemas",
   "main": "dist/index.js",
   "scripts": {
     "typescript-tooling": "tst --all",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "ethereum",

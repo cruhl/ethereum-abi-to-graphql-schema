@@ -1,0 +1,27 @@
+{
+  "name": "ethereum-abi-to-graphql-schema",
+  "version": "0.0.0",
+  "description": "Tool for converting smart contract ABIs into GraphQL schemas.",
+  "main": "dist/index.js",
+  "scripts": {
+    "typescript-tooling": "tst --all",
+    "test": "jest"
+  },
+  "keywords": [
+    "ethereum",
+    "graphql",
+    "typescript"
+  ],
+  "author": "cruhl",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.9.1",
+    "tsconfig-paths": "^3.3.2",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
+    "@types/jest": "^23.0.0",
+    "typescript-tooling": "^3.0.2"
+  }
+}

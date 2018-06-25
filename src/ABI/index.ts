@@ -1,16 +1,24 @@
-export type ContractDescription = Array<FunctionDescription | EventDescription>;
+export type ABI = Array<
+  StandardFunction | ConstructorFunction | FallbackFunction | Event
+>;
 
-export interface FunctionDescription {
-  type: "function";
+export type StandardFunction = PublicFunction & {
   name: string;
   inputs: FunctionInputOutput[];
   outputs: FunctionInputOutput[];
-  payable: true;
-  stateMutability: FunctionStateMutability;
-  constant: true;
-}
+};
+
+export type ConstructorFunction = PublicFunction & {
+  inputs: FunctionInputOutput[];
+};
+
+export type FallbackFunction = PublicFunction;
 
 export type FunctionInputOutput = InputOutput;
+
+export interface PublicFunction {
+  stateMutability: FunctionStateMutability;
+}
 
 export const enum FunctionStateMutability {
   PURE = "pure",
@@ -19,8 +27,7 @@ export const enum FunctionStateMutability {
   PAYABLE = "payable"
 }
 
-export interface EventDescription {
-  type: "event";
+export interface Event {
   name: string;
   inputs: EventInputOutput[];
   anonymous: true;
@@ -35,3 +42,5 @@ export interface InputOutput {
   type: string;
   components?: InputOutput[];
 }
+
+export const fromJSON = (ABIJSON: object): ABI => {};

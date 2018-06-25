@@ -1,4 +1,6 @@
-export type ABI = Array<
+import * as GraphQL from "graphql";
+
+export type Abi = Array<
   StandardFunction | ConstructorFunction | FallbackFunction | Event
 >;
 
@@ -43,4 +45,14 @@ export interface InputOutput {
   components?: InputOutput[];
 }
 
-export const fromJSON = (ABIJSON: object): ABI => {};
+export const fromJson = (_abiJson: object): Abi => [];
+
+export const toGraphQLSchema = (_abi: Abi): GraphQL.DocumentNode =>
+  GraphQL.parse(
+    `
+  type Query {
+    x: String!
+  }
+`,
+    { noLocation: true }
+  );

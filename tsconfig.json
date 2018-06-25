@@ -1,3 +1,4 @@
 {
-  "extends": "./node_modules/typescript-tooling/dist/DefaultConfigs/tsconfig.json"
+  "extends":
+    "./node_modules/typescript-tooling/dist/DefaultConfigs/tsconfig.json"
 }
